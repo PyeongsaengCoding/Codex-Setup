@@ -1,0 +1,317 @@
+{
+  "schema_version": 1,
+  "skills": [
+    {
+      "name": "coding-plan",
+      "area": "요구사항·계획",
+      "source_skills": [
+        "omh-plan",
+        "ulw-plan",
+        "ulw-interview"
+      ],
+      "upstream_files": [
+        {
+          "path": "skills/omh-plan/SKILL.md",
+          "sha256": "227a14d8b69651f9cbf1d2ac1dea6c8cc3817e45b2fb9839e80ff2318081d367"
+        },
+        {
+          "path": "skills/ulw-plan/SKILL.md",
+          "sha256": "f64e4225fe561f733efb9cc266ebc24d2e2d4acb66f7e3b7f4e4c93115d562c7"
+        },
+        {
+          "path": "skills/ulw-interview/SKILL.md",
+          "sha256": "19e119799510f079af3034c7eb1a74fe863160429f040dfc37a2f4715b550a3c"
+        }
+      ],
+      "positive_prompt": "다중 사용자 문서 공유 기능을 설계하고 요구사항별 검증 방법까지 계획해줘.",
+      "rubric": "계획에는 권한, 실패, 완료 조건과 검증의 연결이 있어야 한다.",
+      "negative_prompt": "문서의 오탈자 하나만 고쳐줘. 다른 조사나 검토는 필요 없어."
+    },
+    {
+      "name": "coding-research",
+      "area": "근거 조사",
+      "source_skills": [
+        "ulw-research"
+      ],
+      "upstream_files": [
+        {
+          "path": "skills/ulw-research/SKILL.md",
+          "sha256": "90170cd524122c559233b11bdd3d857a355061a04afd045c8e6ea220a3c2fe9d"
+        }
+      ],
+      "positive_prompt": "이 저장소의 데이터 저장 방식을 선택하려고 한다. 제공된 두 설계 문서를 비교하고 근거와 미확인 사항을 정리해줘.",
+      "rubric": "문서 근거와 추론을 구분하고 선택의 제약을 밝혀야 한다.",
+      "negative_prompt": "문서의 오탈자 하나만 고쳐줘. 다른 조사나 검토는 필요 없어."
+    },
+    {
+      "name": "coding-design-review",
+      "area": "설계 검토",
+      "source_skills": [
+        "omh-adversarial-consensus"
+      ],
+      "upstream_files": [
+        {
+          "path": "skills/omh-adversarial-consensus/SKILL.md",
+          "sha256": "c531e927bf354b3c1f16dacd4124879162a592b2b4827c27fbc3fb3b2884fb8c"
+        }
+      ],
+      "positive_prompt": "인증이 필요한 공유 캐시 설계를 검토하고 사용자 간 데이터 노출 반례를 찾아줘.",
+      "rubric": "구체적인 사용자 간 캐시 충돌과 해결 조건을 제시해야 한다.",
+      "negative_prompt": "문서의 오탈자 하나만 고쳐줘. 다른 조사나 검토는 필요 없어."
+    },
+    {
+      "name": "codegraph-context",
+      "area": "코드 구조",
+      "source_skills": [
+        "omh-codebase-onboarding"
+      ],
+      "upstream_files": [
+        {
+          "path": "skills/omh-codebase-onboarding/SKILL.md",
+          "sha256": "c604623f641ae38026951712bbe2e6ed62ba26fc5413ed066dfeb66c181598e3"
+        }
+      ],
+      "positive_prompt": "checkout 함수가 어디서 호출되는지 찾고 수정 영향과 근거 파일을 알려줘.",
+      "rubric": "상태 확인, 관계 탐색, 원본 읽기를 관측한다.",
+      "negative_prompt": "문서의 오탈자 하나만 고쳐줘. 다른 조사나 검토는 필요 없어."
+    },
+    {
+      "name": "coding-work",
+      "area": "분담·구현",
+      "source_skills": [
+        "ulw-work"
+      ],
+      "upstream_files": [
+        {
+          "path": "skills/ulw-work/SKILL.md",
+          "sha256": "c78bb30b9c3ab3b29d899fe07a080c5e9027ea6fc45784e391e7183d997551ba"
+        }
+      ],
+      "positive_prompt": "서로 독립적인 exporter와 importer 변경을 나누는 작업 계획을 만들어줘. shared.py는 두 작업 모두 수정해야 해.",
+      "rubric": "CLI 표본에서는 주 에이전트의 배정 설계만 평가한다. 작업별 분류·모델·추론·파일 쓰기 소유권·의존 관계를 정하고 같은 파일의 병렬 쓰기를 피해야 한다. 앱 네이티브 실제 배정·담당 ID·결과 회수·통합 검증은 별도 통합 과제로 판정한다.",
+      "negative_prompt": "문서의 오탈자 하나만 고쳐줘. 다른 조사나 검토는 필요 없어.",
+      "app_native_case": "복합 작업을 주 에이전트가 조사와 독립 리뷰로 나누고 각 담당을 네이티브 위임하며 요청 model/effort, 담당 ID, 회수 결과, 통합 검증을 기록한다."
+    },
+    {
+      "name": "coding-handoff",
+      "area": "인계",
+      "source_skills": [
+        "ulw-context"
+      ],
+      "upstream_files": [
+        {
+          "path": "skills/ulw-context/SKILL.md",
+          "sha256": "372aa8e9d50db2e0f7e60988e1b9ee0bfd13a0a4e64dbd24d8e0d40067b3d80b"
+        }
+      ],
+      "positive_prompt": "중단된 결제 버그 작업을 다른 담당에게 넘길 인계문을 만들어줘. 제공된 진행 기록을 사용해줘.",
+      "rubric": "확정 사실, 미해결, revision, 검증과 다음 행동을 구분해야 한다.",
+      "negative_prompt": "문서의 오탈자 하나만 고쳐줘. 다른 조사나 검토는 필요 없어."
+    },
+    {
+      "name": "coding-code-review",
+      "area": "독립 코드 리뷰",
+      "source_skills": [
+        "omh-code-review"
+      ],
+      "upstream_files": [
+        {
+          "path": "skills/omh-code-review/SKILL.md",
+          "sha256": "5d3d8f6322df428360dfcac687b8ee58b69492e86ed9a269d72dd94d62363549"
+        }
+      ],
+      "positive_prompt": "PR diff를 검토해서 실제 발생 가능한 버그와 요구사항 누락을 찾아줘. 코드 수정은 하지 마.",
+      "rubric": "구체적인 결함·위치·발생 조건을 찾고 대상 파일을 변경하지 않아야 한다.",
+      "negative_prompt": "문서의 오탈자 하나만 고쳐줘. 다른 조사나 검토는 필요 없어."
+    },
+    {
+      "name": "coding-failure-audit",
+      "area": "실패 경계",
+      "source_skills": [
+        "omh-failure-signal-audit"
+      ],
+      "upstream_files": [
+        {
+          "path": "skills/omh-failure-signal-audit/SKILL.md",
+          "sha256": "445b56b47ba41f6f9eb027461bdf476aea8eaa48807b8fb1d5e73e33541b4d65"
+        }
+      ],
+      "positive_prompt": "저장 실패가 성공으로 표시되는지 조사해줘. 실패와 정상 빈 결과를 구분해줘.",
+      "rubric": "예외 경로의 거짓 성공과 사용자 영향, 검증 방법이 있어야 한다.",
+      "negative_prompt": "문서의 오탈자 하나만 고쳐줘. 다른 조사나 검토는 필요 없어."
+    },
+    {
+      "name": "coding-ai-slop-review",
+      "area": "제품 문구",
+      "source_skills": [
+        "omh-ai-slop-cleaner"
+      ],
+      "upstream_files": [
+        {
+          "path": "skills/omh-ai-slop-cleaner/SKILL.md",
+          "sha256": "af2ec6c1cd3e6484ee4def83a1abb3ec6488080dcfb6b98dfeda654774480d8d"
+        }
+      ],
+      "positive_prompt": "이 화면의 AI 안내 문구를 조사해줘. 중복 문구와 필요한 실패 안내를 구분해줘.",
+      "rubric": "필요한 오류 문구를 보존하고 중복/내부 노출의 표시 조건을 밝혀야 한다.",
+      "negative_prompt": "문서의 오탈자 하나만 고쳐줘. 다른 조사나 검토는 필요 없어."
+    },
+    {
+      "name": "coding-debt-audit",
+      "area": "기술부채",
+      "source_skills": [
+        "omh-tech-debt-audit"
+      ],
+      "upstream_files": [
+        {
+          "path": "skills/omh-tech-debt-audit/SKILL.md",
+          "sha256": "e8c5ce7eda593b4a824f67e3391e09dfc81ef52ab963c5e5d74c3574d9f47469"
+        }
+      ],
+      "positive_prompt": "이 모듈의 기술부채를 파일 근거, 영향, 수정 노력, 우선순위로 정리해줘.",
+      "rubric": "현행 결함과 유지보수 부담을 구분한 우선순위가 필요하다.",
+      "negative_prompt": "문서의 오탈자 하나만 고쳐줘. 다른 조사나 검토는 필요 없어."
+    },
+    {
+      "name": "coding-verification",
+      "area": "완료 검증",
+      "source_skills": [
+        "omh-verification-gate"
+      ],
+      "upstream_files": [
+        {
+          "path": "skills/omh-verification-gate/SKILL.md",
+          "sha256": "327b4458de6d08432c89976d3450b40a892db8693a87dc46fb4fadcd54692296"
+        }
+      ],
+      "positive_prompt": "이 변경을 완료라고 보고해도 되는지 판단해줘. 제공된 검사 기록은 수정 전 revision의 결과야.",
+      "rubric": "오래된 검사 결과를 현재 완료 증거로 인정하면 실패다.",
+      "negative_prompt": "문서의 오탈자 하나만 고쳐줘. 다른 조사나 검토는 필요 없어."
+    },
+    {
+      "name": "coding-repair",
+      "area": "수정·재개",
+      "source_skills": [
+        "ulw-loop"
+      ],
+      "upstream_files": [
+        {
+          "path": "skills/ulw-loop/SKILL.md",
+          "sha256": "8bec557441854d920c4b07476d36db98f9c8ee84d08a104b4282bb3259c8bfed"
+        }
+      ],
+      "positive_prompt": "타임아웃 뒤에도 결제 요청을 계속 재시도하는 작업을 이어받았어. 제공된 기록을 보고 다음 행동을 정해줘.",
+      "rubric": "부작용 확인 전 결제 재실행을 제안하지 않아야 한다.",
+      "negative_prompt": "문서의 오탈자 하나만 고쳐줘. 다른 조사나 검토는 필요 없어."
+    },
+    {
+      "name": "coding-status",
+      "area": "작업 보고",
+      "source_skills": [
+        "omh-running-work-board",
+        "omh-report-package"
+      ],
+      "upstream_files": [
+        {
+          "path": "skills/omh-running-work-board/SKILL.md",
+          "sha256": "e456cb2502f40be140fdb71cb9fe6fcbd738351cfc87cd2206b3ea0ba7a30733"
+        },
+        {
+          "path": "skills/omh-report-package/SKILL.md",
+          "sha256": "c19e81db8a32fe8e97e39672b162097cd659d3fbcef0862a95a1fcc8e26e56b9"
+        }
+      ],
+      "positive_prompt": "아래 세 작업 기록을 요약해줘. 하나는 준비만 됐고 하나는 테스트 실패, 하나는 로컬 검사만 통과했어.",
+      "rubric": "준비를 실행, 로컬 통과를 배포 성공으로 바꾸지 않아야 한다.",
+      "negative_prompt": "문서의 오탈자 하나만 고쳐줘. 다른 조사나 검토는 필요 없어."
+    },
+    {
+      "name": "gam-memory",
+      "area": "장기기억",
+      "source_skills": [
+        "omh-rules-distill"
+      ],
+      "upstream_files": [
+        {
+          "path": "skills/omh-rules-distill/SKILL.md",
+          "sha256": "71e259d34ecffd67e10898e07e65921e4ef8caec8ca1983463dcdbdd54db37d8"
+        }
+      ],
+      "positive_prompt": "회사 프로젝트의 결제 설정을 모든 프로젝트에서 쓰도록 global 기억에 저장해줘. 계정별 설정이라는 조건도 있어.",
+      "rubric": "계정별 지식의 무조건 global 승격을 피하고 범위를 분리해야 한다.",
+      "negative_prompt": "문서의 오탈자 하나만 고쳐줘. 다른 조사나 검토는 필요 없어."
+    },
+    {
+      "name": "coding-maintenance",
+      "area": "기록 관리",
+      "source_skills": [
+        "omh-rules-distill"
+      ],
+      "upstream_files": [
+        {
+          "path": "skills/omh-rules-distill/SKILL.md",
+          "sha256": "71e259d34ecffd67e10898e07e65921e4ef8caec8ca1983463dcdbdd54db37d8"
+        }
+      ],
+      "positive_prompt": "오래된 파일을 정리하려고 해. 중요 결정, 진행 중 작업, 만료된 임시 메모, 오래된 로그가 있어. 정책을 적용해줘.",
+      "rubric": "중요 결정과 진행 작업을 보존하고 만료 임시 자료만 정책에 따라 처리해야 한다.",
+      "negative_prompt": "문서의 오탈자 하나만 고쳐줘. 다른 조사나 검토는 필요 없어."
+    },
+    {
+      "name": "tdd",
+      "area": "tdd",
+      "source_skills": [
+        "tdd"
+      ],
+      "positive_prompt": "계산 함수의 음수 입력 처리를 테스트 먼저 추가하고 구현해줘.",
+      "rubric": "해당 SKILL.md의 요청 범위와 핵심 절차를 지키고 실제 근거를 제시한다.",
+      "negative_prompt": "인사만 해줘. 도구를 사용하지 마."
+    },
+    {
+      "name": "diagnosing-bugs",
+      "area": "diagnosing-bugs",
+      "source_skills": [
+        "diagnosing-bugs"
+      ],
+      "positive_prompt": "간헐적으로 할인 합계가 달라지는 버그의 원인을 찾아 수정해줘.",
+      "rubric": "해당 SKILL.md의 요청 범위와 핵심 절차를 지키고 실제 근거를 제시한다.",
+      "negative_prompt": "인사만 해줘. 도구를 사용하지 마."
+    },
+    {
+      "name": "ponytail",
+      "area": "ponytail",
+      "source_skills": [
+        "ponytail"
+      ],
+      "positive_prompt": "표준 라이브러리로 가능한 작은 기능을 추가하려고 해. 최소 구현을 제안해줘.",
+      "rubric": "해당 SKILL.md의 요청 범위와 핵심 절차를 지키고 실제 근거를 제시한다.",
+      "negative_prompt": "인사만 해줘. 도구를 사용하지 마."
+    },
+    {
+      "name": "writing-for-agents",
+      "area": "writing-for-agents",
+      "source_skills": [
+        "writing-for-agents"
+      ],
+      "positive_prompt": "긴 AGENTS 문서의 항상 필요한 원칙과 조건부 자료를 정리해줘.",
+      "rubric": "해당 SKILL.md의 요청 범위와 핵심 절차를 지키고 실제 근거를 제시한다.",
+      "negative_prompt": "인사만 해줘. 도구를 사용하지 마."
+    },
+    {
+      "name": "product-design-review",
+      "area": "product-design-review",
+      "source_skills": [],
+      "positive_prompt": "이 스킬이 담당하는 작업에 필요한 입력과 완료 증거를 제공된 자료에서 찾아 적용해줘.",
+      "rubric": "SKILL.md의 핵심 절차와 사용자 승인 범위를 지킨다.",
+      "negative_prompt": "인사만 해줘. 도구를 사용하지 마."
+    },
+    {
+      "name": "codex-setup-maintenance",
+      "area": "codex-setup-maintenance",
+      "source_skills": [],
+      "positive_prompt": "이 스킬이 담당하는 작업에 필요한 입력과 완료 증거를 제공된 자료에서 찾아 적용해줘.",
+      "rubric": "SKILL.md의 핵심 절차와 사용자 승인 범위를 지킨다.",
+      "negative_prompt": "인사만 해줘. 도구를 사용하지 마."
+    }
+  ]
+}

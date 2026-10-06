@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "owned_log_days": 30,
+  "receipt_days": 180,
+  "memory_archive_requires": [
+    "scope=project",
+    "status=active",
+    "tag=temporary",
+    "tag=expires:YYYY-MM-DD<today",
+    "not protected",
+    "importance<0.8",
+    "not decision/preference/convention"
+  ],
+  "memory_hard_delete": false,
+  "protect_tags": [
+    "pinned",
+    "important",
+    "in-progress",
+    "unresolved"
+  ],
+  "backup_delete": false,
+  "note": "보존 기간은 이번 구현 기본값. 사용자 설정으로 변경 가능. GAM 원본과 Codex 세션 영구 삭제 없음."
+}

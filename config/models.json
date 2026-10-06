@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "families": {
+    "sol": "gpt-6.1-sol",
+    "astra": "gpt-6-astra",
+    "luna": "gpt-6-luna"
+  },
+  "resolved_on": "2026-10-05",
+  "source": "Codex host advertised models; live checks recorded separately",
+  "update_policy": "Verify official current family version and account support, preserve category effort, run routing probes before applying."
+}

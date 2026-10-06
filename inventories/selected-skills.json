@@ -1,0 +1,56 @@
+{
+  "purpose": "Observed application; desired selection is 03-skills.md, not a version-management requirement",
+  "date": "2026-09-10",
+  "skills": [
+    {
+      "repo": "DietrichGebert/ponytail",
+      "selected_paths": [
+        "skills/ponytail"
+      ],
+      "adaptations": "12-skill-application.md"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "selected_paths": [
+        "skills/engineering/diagnosing-bugs",
+        "skills/engineering/tdd",
+        "skills/productivity/writing-for-agents"
+      ],
+      "adaptations": "12-skill-application.md"
+    },
+    {
+      "repo": "coreyhaines31/marketingskills",
+      "selected_paths": [
+        "skills/copywriting",
+        "skills/seo-audit",
+        "skills/aso",
+        "skills/analytics",
+        "skills/cro"
+      ],
+      "adaptations": "12-skill-application.md"
+    },
+    {
+      "repo": "tt-a1i/archify",
+      "selected_paths": [
+        "archify"
+      ],
+      "adaptations": "12-skill-application.md"
+    },
+    {
+      "repo": "blader/humanizer",
+      "selected_paths": [
+        "."
+      ],
+      "adaptations": "12-skill-application.md"
+    },
+    {
+      "repo": "affaan-m/ECC",
+      "selected_paths": [
+        "skills/iterative-retrieval"
+      ],
+      "adaptations": "12-skill-application.md"
+    }
+  ],
+  "mcp": "chrome-devtools",
+  "evidence": "12-skill-application.md"
+}

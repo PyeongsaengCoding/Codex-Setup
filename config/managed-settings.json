@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "status": "applied_instructions_and_skills_existing_preferences_preserved",
+  "codex_loads_this_file": false,
+  "target_file": "~/.codex/config.toml",
+  "candidate_preferences": [
+    "model",
+    "model_reasoning_effort",
+    "personality",
+    "service_tier"
+  ],
+  "desired_values": {
+    "model": "gpt-6.1-sol",
+    "model_reasoning_effort": "high",
+    "personality": "pragmatic",
+    "service_tier": "default"
+  },
+  "review_separately": [
+    "mcp_servers",
+    "plugins",
+    "marketplaces",
+    "model_provider",
+    "model_providers"
+  ],
+  "preserve_without_changes": [
+    "projects",
+    "desktop",
+    "notify",
+    "sandbox_mode",
+    "approval_policy",
+    "approvals_reviewer",
+    "permissions",
+    "shell_environment_policy",
+    "features",
+    "memories"
+  ],
+  "excluded_data": [
+    "credentials",
+    "sessions",
+    "memories",
+    "logs",
+    "cache",
+    "databases",
+    "raw_config_snapshot"
+  ],
+  "apply_strategy": "Review and apply only explicitly selected supported keys. No whole-file replacement, undocumented include, automatic synchronization, or automatic push.",
+  "application_note": "Preferences document the values intentionally preserved in the real config; apply_managed.py deploys instructions and skills only."
+}
